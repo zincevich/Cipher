@@ -12,13 +12,13 @@
             <ColumnDefinition Width="400*"/>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Column="0" HorizontalAlignment="Center" Height="30" Margin="0,-400,0,0" TextWrapping="Wrap" Text="Меню" VerticalAlignment="Center" Width="100" TextAlignment="Center"/>
-        <Button Grid.Column="0" Content="Открыть" Click="OpenFile" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" Margin="0,100,0,0"/>
-        <Button Grid.Column="0" Content="Дешифровать" Click="Decipher" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" Margin="0,200,0,0"/>
-        <Button Grid.Column="0" Content="Шифровать" Click="Cipher" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" Margin="0,300,0,0"/>
-        <Button Grid.Column="0" Content="Сохранить" Click="Save" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" Margin="0,400,0,0"/>
-        <TextBox Grid.Column="1" Name="before" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="138" Margin="23,69,0,0" TextWrapping="Wrap" Text="Введите текст или откройте файл" VerticalAlignment="Top" Width="350"/>
+        <Button Grid.Column="0" Content="Открыть" Click="OpenFile" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" Margin="0,-300,0,0"/>
+        <Button Grid.Column="0" Content="Дешифровать" Click="Decipher" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" Margin="0,-100,0,0"/>
+        <Button Grid.Column="0" Content="Шифровать" Click="Cipher" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" Margin="0,100,0,0"/>
+        <Button Grid.Column="0" Content="Сохранить" Click="Save" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" Margin="0,300,0,0"/>
+        <TextBox Grid.Column="1" Name="before" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="150" Margin="23,69,0,0" TextWrapping="Wrap" Text="Введите текст или откройте файл" VerticalAlignment="Top" Width="580"/>
         <TextBox Grid.Column="1" Name="key" HorizontalAlignment="Left" Height="30" Margin="23,229,0,0" TextWrapping="Wrap" Text="Введите ключ" VerticalAlignment="Top" Width="225"/>
-        <TextBox Grid.Column="1" Name="after" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="138" Margin="23,269,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="350" IsReadOnly="True"/>
+        <TextBox Grid.Column="1" Name="after" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="150" Margin="23,269,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="580" IsReadOnly="True"/>
         <Separator HorizontalAlignment="Left" Height="5" Margin="-250,0,0,0" VerticalAlignment="Center" Width="500" Grid.Column="1" RenderTransformOrigin="0.5,0.5">
             <Separator.RenderTransform>
                 <TransformGroup>

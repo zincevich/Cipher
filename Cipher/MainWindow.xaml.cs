@@ -75,13 +75,13 @@ namespace Cipher
         {
             string result = "";
             // проверка на пустоту у оригинального текста и ключа
-            if (original.Length == 0 || original == null || String.IsNullOrEmpty(original))
+            if (string.IsNullOrWhiteSpace(original))
             {
                 notifications.Text = "Сначала введите текст, с которым вы хотите работать!";
                 return result;
             }
 
-            if (keyword.Length == 0 || keyword == null || String.IsNullOrEmpty(keyword))
+            if (string.IsNullOrWhiteSpace(keyword))
             {
                 notifications.Text = "Сначала введите ключ, с которым вы хотите работать!";
                 return result;
@@ -92,7 +92,7 @@ namespace Cipher
             // проверка на лишние и неправильные символы в ключе, а также на количество слов в ключе
             foreach (var sym in keyword)
             {
-                if (Char.IsWhiteSpace(sym))
+                if (char.IsWhiteSpace(sym))
                 {
                     notifications.Text = "Ключ - это одно слово. Введите новый ключ и попробуйте снова!";
                     return result;
@@ -109,6 +109,8 @@ namespace Cipher
             int i = 0;
             int c = 0;
 
+            StringBuilder sb = new StringBuilder();
+
             // шифруем
             foreach (var sym in original)
             {
@@ -116,14 +118,14 @@ namespace Cipher
                 {
                     if (code)
                     {
-                        c = (Array.IndexOf(alphabet.ToArray(), sym) + Array.IndexOf(alphabet.ToArray(), keyword[i])) % alphabet.Length;
+                        c = (alphabet.IndexOf(sym) + alphabet.IndexOf(keyword[i])) % alphabet.Length;
                     }
                     else
                     {
-                        c = (Array.IndexOf(alphabet.ToArray(), sym) - Array.IndexOf(alphabet.ToArray(), keyword[i]) + alphabet.Length) % alphabet.Length;
+                        c = (alphabet.IndexOf(sym) - alphabet.IndexOf(keyword[i]) + alphabet.Length) % alphabet.Length;
                     }
 
-                    result += alphabet[c];
+                    sb.Append(alphabet[c]);
 
                     i++;
 
@@ -134,10 +136,10 @@ namespace Cipher
                 }
                 else
                 {
-                    result += sym;
+                    sb.Append(sym);
                 }
             }
-
+            result = sb.ToString();
             after.Text = result;
             notifications.Text = "Готово!";
             return result;
